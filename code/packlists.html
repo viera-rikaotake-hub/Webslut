@@ -7,10 +7,28 @@
 <body>
   <h1>Packlists</h1>
 
-<button class="button">Winter</button>
-<button class="button">Spring</button>
-<button class="button">Summer</button>
-<button class="button">Autumn</button>
-
+  <div class="buttoncontainer">
+<button class="button2" onclick="openForm()">Winter</button>
+<button class="button2" onclick="openForm()">Spring</button>
+<button class="button2" onclick="openForm()">Summer</button>
+<button class="button2" onclick="openForm()">Autumn</button>
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <li>strupmor</li>
+    <li>dfkg
+    </li>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+</div>
 </body>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
 </html>
