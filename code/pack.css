@@ -1,0 +1,13 @@
+body {background-color: aliceblue;
+}
+h1{
+    text-align: center;
+    color: black;
+    font-family: georgia;
+}
+
+button{
+    padding: 6vw 6vw;
+    margin: 3vw;
+    background-color: aquamarine;
+}

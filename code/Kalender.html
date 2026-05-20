@@ -1,0 +1,58 @@
+<html lang="eng">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viera-Rikas Reseplanerare</title>
+  <link rel="icon" type="image/x-icon" href="Pictures/plane.jpg">
+  <title>Viera-Rikas Reseplanerare</title>
+  <link rel="stylesheet" href="calender.css">
+  <script src="calender.js"></script>
+</head>
+<body>
+  
+<h1>CSS Calendar</h1>
+ 
+<!-- Header -->
+<div class="month">
+  <div class="month-nav">
+    <span class="arrow" onclick="changeMonth(-1)">&#10094;</span>
+    <div class="month-label">
+      <span class="mname" id="mname"></span>
+      <span class="myear" id="myear"></span>
+    </div>
+    <span class="arrow" onclick="changeMonth(1)">&#10095;</span>
+  </div>
+  <button class="year-ahead-btn" onclick="toggleYearPanel()">&#128197; Plans in next 12 months</button>
+</div>
+ 
+<!-- Grid: weekday labels + day cells all in one CSS grid -->
+<div class="cal-grid" id="calGrid">
+  <div class="dow">Mo</div>
+  <div class="dow">Tu</div>
+  <div class="dow">We</div>
+  <div class="dow">Th</div>
+  <div class="dow">Fr</div>
+  <div class="dow">Sa</div>
+  <div class="dow">Su</div>
+  <!-- day cells injected here by JS -->
+</div>
+ 
+<!-- Day plans panel -->
+<div id="plansPanel">
+  <h3 id="panelTitle">Plans</h3>
+  <ul id="plansList"></ul>
+  <div class="add-row">
+    <input type="text" id="planInput" placeholder="Add a plan..." maxlength="80">
+    <button onclick="addPlan()">Add</button>
+  </div>
+</div>
+ 
+<!-- Year-ahead panel -->
+<div id="yearPanel">
+  <div class="ya-head">
+    <h3>Plans in the next 12 months</h3>
+    <button class="ya-close" onclick="toggleYearPanel()">&#10005;</button>
+  </div>
+  <div id="yearContent"></div>
+</div>
+ </body>
+ </html>

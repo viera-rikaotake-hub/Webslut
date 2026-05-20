@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<meta name="viewport"   content="witdth=device-width",  initial-scale="1.0">
+<html lang="eng">
+    <link rel="stylesheet" href="startsida.css">
+   <title>Roami</title> 
+   <link rel="icon" type="image/x-icon" href="Pictures/plane.jpg">
+   <script src="startsida.js"></script>
+<body>
+<header>
+
+<h1>Roami the travelplaner</h1>
+<p>This travel planner is made to help you plan your travel easy and efficiant.</p>
+<script src="slutuppgift.js"></script>
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:3vw;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="Pictures/Tulip.jpg" alt="Avatar" class="avatar">
+    </div>
+
+     <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    
+    </div>
+  </form>
+</div>
+</header>
+
+<aside>
+  <div class="buttoncontainer">
+  <a class="containerbutton">Budget Diagram</a>
+  <a class="containerbutton" href="Money converter.html">Money Converter</a>
+  <a class="containerbutton" href="Kalender.html">Calender</a>
+  <a class="containerbutton">Packlists</a>
+  <a class="containerbutton">Map</a>
+  </aside>
+
+  <section>
+<search>
+  <form>
+    <input name="fsrch" id="fsrch" placeholder="Destination">
+  </form>
+</search>
+  </section>
+</body>
+</html>
