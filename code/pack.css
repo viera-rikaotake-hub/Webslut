@@ -23,21 +23,26 @@ h1{
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
-  position: fixed;
-  bottom: 0;
-  right: 15px;
-  border: 3px solid #f1f1f1;
+  position:fixed;
+  align-items: center;
+  border:0.3vw solid #f1f1f1;
+  left: 40%;
+  top: 25%;
   z-index: 9;
 }
 
 /* Add styles to the form container */
 .form-container {
-  max-width: 300px;
-  padding: 10px;
+  width:20vw ;
+  height: 10vw;
+  padding: 1vw;
+  
   background-color: white;}
   /* Add a red background color to the cancel button */
 .form-container .cancel {
   background-color: red;
+  position: fixed;
+
 }
 
 /* Add some hover effects to buttons */

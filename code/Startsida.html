@@ -2,25 +2,34 @@
 <meta name="viewport"   content="witdth=device-width",  initial-scale="1.0">
 <html lang="eng">
     <link rel="stylesheet" href="startsida.css">
+     <script src="startsida.js"></script>
+    <head>
    <title>Roami</title> 
-   <link rel="icon" type="image/x-icon" href="Pictures/plane.jpg">
-   <script src="startsida.js"></script>
+   <link rel="icon" type="image/x-icon" href="Pictures/romai.png">
+  </head>
 <body>
-  <button onclick="document.getElementById('id01').style.display='block'" class="button1">Login</button>
-<header>
+
+  <div class="buttoncontainer">
+    <button onclick="document.getElementById('id01').style.display='block'" class="button1">Login</button>
+  <a class="containerbutton" href="budget.html">Budget Diagram</a>
+  <a class="containerbutton" href="Money converter.html">Money Converter</a>
+  <a class="containerbutton" href="Kalender.html">Calender</a>
+  <a class="containerbutton" href="packlists.html">Packlists</a>
+  <a class="containerbutton" href="Map.html">Map</a>
+ </div>
+
+ <header>
 <h1>Roami the travelplaner</h1>
 <p>This travel planner is made to help you plan your travel easy and efficiant.</p>
+
 </header>
-
-
 
 <div id="id01" class="modal">
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-      <img href="Picrures/cloud.jpg" alt="Avatar" class="avatar">
+      <img href="Pictures/snowflake.jpg" alt="" class="avatar">
     </div>
-
      <div class="container">
       <label for="uname"><b>Username</b></label>
       <input type="text" placeholder="Enter Username" name="uname" required>
@@ -29,7 +38,6 @@
       <input type="password" placeholder="Enter Password" name="psw" required>
         
       <button type="submit">Login</button>
-      
     </div>
 
     <div class="container" style="background-color:#fefefe">
@@ -39,21 +47,15 @@
   </form>
 </div>
 
-
-<aside>  <div class="buttoncontainer">
-  <a class="containerbutton">Budget Diagram</a>
-  <a class="containerbutton" href="Money converter.html">Money Converter</a>
-  <a class="containerbutton" href="Kalender.html">Calender</a>
-  <a class="containerbutton" href="packlists.html">Packlists</a>
-  <a class="containerbutton" href="Map.html">Map</a>
-  </aside> 
-
   <section>
 <search>
   <form>
-    <input name="fsrch" id="fsrch" placeholder="Destination">
+    <input type="search" value="Destination">
   </form>
 </search>
   </section>
+
+  
+
 </body>
 </html>
