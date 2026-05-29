@@ -1,0 +1,239 @@
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Verdana, sans-serif; }
+ 
+    h1 {
+      font-size: clamp(1rem, 4vw, 2rem);
+      padding: clamp(10px, 2vw, 20px) clamp(12px, 3vw, 24px);
+    }
+ 
+    /* ── Header ── */
+    .month {
+      width: 100%;
+      background: #1abc9c;
+      text-align: center;
+      padding: clamp(16px, 3vw, 40px) 3% clamp(12px, 2vw, 20px);
+    }
+    .month-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(10px, 3vw, 40px);
+      margin-bottom: clamp(8px, 1.5vw, 16px);
+    }
+    .arrow {
+      color: white;
+      font-size: clamp(16px, 3vw, 26px);
+      cursor: pointer;
+      user-select: none;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .arrow:hover { background: rgba(0,0,0,0.15); }
+    .month-label {
+      color: white;
+      text-align: center;
+      min-width: clamp(120px, 28vw, 260px);
+    }
+    .month-label .mname {
+      display: block;
+      font-size: clamp(14px, 3vw, 22px);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+    .month-label .myear {
+      display: block;
+      font-size: clamp(12px, 2vw, 17px);
+      letter-spacing: 0.08em;
+      margin-top: 3px;
+    }
+    .year-ahead-btn {
+      background: rgba(255,255,255,0.25);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.55);
+      border-radius: 20px;
+      padding: clamp(4px, 0.7vw, 7px) clamp(10px, 2vw, 20px);
+      font-size: clamp(9px, 1.4vw, 12px);
+      font-family: Verdana, sans-serif;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .year-ahead-btn:hover { background: rgba(255,255,255,0.4); }
+ 
+    /* ── Calendar grid (CSS Grid, 7 equal columns) ── */
+    .cal-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      width: 100%;
+    }
+ 
+    /* Weekday header row */
+    .cal-grid .dow {
+      background: #ddd;
+      color: #666;
+      text-align: center;
+      padding: clamp(6px, 1.2vw, 12px) 0;
+      font-size: clamp(9px, 1.6vw, 13px);
+    }
+ 
+    /* Day cells */
+    .cal-grid .day-cell {
+      background: #eee;
+      text-align: center;
+      padding: clamp(4px, 0.8vw, 8px) 0 clamp(6px, 1vw, 10px);
+      cursor: pointer;
+      min-height: clamp(36px, 6vw, 60px);
+    }
+    .cal-grid .day-cell:hover .day-num { color: #1abc9c; font-weight: bold; }
+    .cal-grid .day-cell.empty {
+      visibility: hidden;
+      cursor: default;
+      pointer-events: none;
+    }
+ 
+    /* Number circle */
+    .day-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(22px, 3.5vw, 36px);
+      height: clamp(22px, 3.5vw, 36px);
+      border-radius: 50%;
+      font-size: clamp(10px, 1.8vw, 15px);
+      color: #555;
+    }
+    .day-num.today    { background: #1abc9c; color: #fff; }
+    .day-num.selected { background: #148f77; color: #fff; }
+ 
+    /* Orange dot for days with plans */
+    .plan-dot {
+      display: block;
+      width: clamp(4px, 0.7vw, 7px);
+      height: clamp(4px, 0.7vw, 7px);
+      background: #e67e22;
+      border-radius: 50%;
+      margin: 2px auto 0;
+    }
+ 
+    /* ── Plans panel ── */
+    #plansPanel {
+      display: none;
+      background: #fff;
+      border-top: 3px solid #1abc9c;
+      padding: clamp(10px, 2vw, 20px) clamp(12px, 3vw, 24px);
+    }
+    #plansPanel h3 {
+      font-size: clamp(11px, 1.8vw, 15px);
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: clamp(8px, 1.2vw, 14px);
+    }
+    #plansList { margin-bottom: clamp(6px, 1vw, 12px); }
+    #plansList li {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: clamp(4px, 0.7vw, 8px) 0;
+      border-bottom: 1px solid #eee;
+      font-size: clamp(11px, 1.8vw, 14px);
+      color: #333;
+    }
+    .del-btn {
+      background: none;
+      border: none;
+      color: #bbb;
+      cursor: pointer;
+      font-size: clamp(13px, 2vw, 18px);
+      padding: 0 4px;
+      flex-shrink: 0;
+    }
+    .del-btn:hover { color: #e74c3c; }
+    .no-plans { font-size: clamp(11px, 1.6vw, 14px); color: #aaa; }
+    .add-row {
+      display: flex;
+      gap: clamp(4px, 1vw, 10px);
+      margin-top: clamp(6px, 1vw, 10px);
+    }
+    .add-row input {
+      flex: 1;
+      min-width: 0;
+      padding: clamp(4px, 0.7vw, 8px) clamp(6px, 1vw, 12px);
+      font-size: clamp(11px, 1.6vw, 14px);
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: Verdana, sans-serif;
+    }
+    .add-row input:focus { outline: none; border-color: #1abc9c; }
+    .add-row button {
+      padding: clamp(4px, 0.7vw, 8px) clamp(8px, 1.5vw, 16px);
+      background: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: clamp(11px, 1.6vw, 14px);
+      font-family: Verdana, sans-serif;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .add-row button:hover { background: #148f77; }
+ 
+    /* ── Year-ahead panel ── */
+    #yearPanel {
+      display: none;
+      background: #f9f9f9;
+      border-top: 3px solid #e67e22;
+      padding: clamp(10px, 2vw, 20px) clamp(12px, 3vw, 24px);
+    }
+    .ya-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: clamp(8px, 1.2vw, 16px);
+    }
+    .ya-head h3 {
+      margin: 0;
+      font-size: clamp(11px, 1.8vw, 15px);
+      color: #555;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+    .ya-close {
+      background: none;
+      border: none;
+      font-size: clamp(15px, 2.5vw, 22px);
+      color: #aaa;
+      cursor: pointer;
+    }
+    .ya-close:hover { color: #e74c3c; }
+    .ya-month-group { margin-bottom: clamp(8px, 1.2vw, 16px); }
+    .ya-month-lbl {
+      font-size: clamp(10px, 1.5vw, 13px);
+      font-weight: bold;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-bottom: 4px;
+    }
+    .ya-row {
+      display: flex;
+      align-items: center;
+      gap: clamp(6px, 1vw, 12px);
+      padding: clamp(4px, 0.7vw, 7px) 4px;
+      border-bottom: 1px solid #eee;
+      font-size: clamp(11px, 1.7vw, 14px);
+      color: #333;
+      cursor: pointer;
+    }
+    .ya-row:hover { background: #efefef; }
+    .ya-tag {
+      flex-shrink: 0;
+      background: #e67e22;
+      color: white;
+      font-size: clamp(9px, 1.3vw, 12px);
+      border-radius: 3px;
+      padding: 1px clamp(4px, 0.7vw, 8px);
+    }
+    .ya-empty { font-size: clamp(11px, 1.6vw, 14px); color: #aaa; }

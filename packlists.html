@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<meta name="viewport"   content="witdth=device-width",  initial-scale="1.0"> 
+<html lang="sv">
+    <link rel="stylesheet" href="pack.css">
+    <head>
+<Title>Roami Packlists</Title>
+  <link rel="icon" type="image/x-icon" href="Pictures/romai.png">
+  </head>
+<body>
+  <a href="Startsida.html">Start</a>
+  <h2>Ska fortsätta med denna i 3an</h2>
+  <h1>Packlists</h1>
+
+  <div class="buttoncontainer">
+<button class="button2" onclick="openForm()">Winter</button>
+<button class="button2" onclick="openForm()">Spring</button>
+<button class="button2" onclick="openForm()">Summer</button>
+<button class="button2" onclick="openForm()">Autumn</button>
+<div class="form-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <li>strupmor</li>
+    <li>dfkg
+    </li>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+</div>
+</body>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+</html>

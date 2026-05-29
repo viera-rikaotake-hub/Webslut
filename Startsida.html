@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<meta name="viewport"   content="witdth=device-width",  initial-scale="1.0">
+<html lang="eng">
+    <link rel="stylesheet" href="startsida.css">
+     <script src="startsida.js"></script>
+    <head>
+   <title>Roami</title> 
+   <link rel="icon" type="image/x-icon" href="Pictures/romai.png">
+  </head>
+<body>
+
+  <div class="buttoncontainer">
+    <button onclick="document.getElementById('id01').style.display='block'" class="button1">Login</button>
+  <a class="containerbutton" href="budget.html">Budget Diagram</a>
+  <a class="containerbutton" href="Money converter.html">Money Converter</a>
+  <a class="containerbutton" href="Kalender.html">Calender</a>
+  <a class="containerbutton" href="packlists.html">Packlists</a>
+  <a class="containerbutton" href="Map.html">Map</a>
+ </div>
+
+ <header>
+<h1>Roami the travelplaner</h1>
+<p>This travel planner is made to help you plan your travel easy and efficiant.</p>
+
+</header>
+
+<div id="id01" class="modal">
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img href="Pictures/snowflake.jpg" alt="" class="avatar">
+    </div>
+     <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+    </div>
+
+    <div class="container" style="background-color:#fefefe">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+    
+    </div>
+  </form>
+</div>
+
+  <section>
+<search>
+  <form>
+    <input type="search" value="Destination">
+  </form>
+</search>
+  </section>
+
+  
+
+</body>
+</html>
